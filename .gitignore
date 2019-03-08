@@ -49,3 +49,6 @@ HELP.md
 /dist/
 /nbdist/
 /.nb-gradle/
+
+### BD ###
+*.db

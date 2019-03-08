@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -19,21 +20,24 @@ public class AuthorController {
 	@RequestMapping("/start")
 	public String cargaInicial() {
 		try {
+			List<Author> authors = new ArrayList<Author>();
 			Author author = new Author();
-			author.setName("Jhonatan");
-			repository.save(author);
+			author.setName("Jhonatan");			
+			authors.add(author);
 			
 			author = new Author();
 			author.setName("Joao");
-			repository.save(author);
+			authors.add(author);
 			
 			author = new Author();
 			author.setName("Luis");
-			repository.save(author);
+			authors.add(author);
 			
 			author = new Author();
 			author.setName("Bia");
-			repository.save(author);
+			authors.add(author);
+			
+			repository.saveAll(authors);
 			return "Foi";
 		}catch (Exception e) 
 		{
